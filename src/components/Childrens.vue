@@ -32,9 +32,11 @@
       />
     </transition-group>
     <transition name="fade">
-      <button class="children__save" v-if="childrens.length !== 0">
-        Сохранить
-      </button>
+      <router-link to="/preview">
+        <button class="children__save" v-if="childrens.length !== 0">
+          Сохранить
+        </button>
+      </router-link>
     </transition>
   </div>
 </template>

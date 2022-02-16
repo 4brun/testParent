@@ -1,11 +1,17 @@
 <template>
   <div class="wrapper">
     <h3 class="preveiw__title">Персональные данные</h3>
-    <h4 class="preveiw__parent">{{ parent.name }}, {{ parent.age }} лет</h4>
-    <h3 class="preveiw__title">Дети</h3>
+    <h4 class="preveiw__parent">
+      {{ parent.name || "Имя не задано" }},
+      {{ parent.age || "Возраст не указан" }}
+      <span v-if="parent.age">лет</span>
+    </h4>
+    <h3 v-if="childrens.length" class="preveiw__title">Дети</h3>
     <div class="preveiw__childrens">
       <p v-for="item in childrens" :key="item.id" class="preweiw__item">
-        {{ item.name }}, {{ item.age }} лет
+        {{ item.name || "Имя ребенка не задано" }},
+        {{ item.age || "Возраст ребенка не указан" }}
+        <span v-if="item.age">лет</span>
       </p>
     </div>
   </div>

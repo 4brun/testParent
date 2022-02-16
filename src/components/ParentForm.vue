@@ -18,7 +18,7 @@
           value="age"
           v-model.number="parent.age"
         />
-        <label class="parent__label" for="age">Имя</label>
+        <label class="parent__label" for="age">Возраст</label>
       </div>
     </form>
   </div>
